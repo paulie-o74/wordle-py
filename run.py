@@ -14,6 +14,3 @@ SHEET = GSPREAD_CLIENT.open('wordlepy')
 user_creds = SHEET.worksheet('credentials')
 
 word_list = SHEET.worksheet('words')
-
-data = user_creds.get_all_values()
-print(data)
