@@ -26,7 +26,7 @@ DIVIDER = '-' * 30
 
 def get_logins() -> list:
     """
-    Gets all the user log in details from the worksheet and return a list of lists
+    Gets all the user log in details from the worksheet and return a list of dictionaries
     """
     login_data = LOGINS.get_all_records()
     return login_data
@@ -40,19 +40,24 @@ def login():
     username = input('\nEnter username: \n')
     password = input('\nPassword: \n')
     logins = get_logins()
-    if not [x for x in logins if x['username'] == username]:
+    # list comprehension making a list from an iteration
+    # a more succint way to create a list from a for loop
+    # Every x is one dictionary in the list i.e. 1 username password pair key value pair
+    # We check if not to check if there is no result in the list matching a username then:
+    if not [x for x in logins if x['Username'] == username]: 
         print('\nNo such user found')
         print('\nPlease check and try again.')
         login()
     else:
-        matched_username = [x for x in logins if x['username'] == username][0]
-    if password == matched_username['password']:
+        matched_username = [x for x in logins if x['Username'] == username][0]
+    if password == matched_username['Password']:
         print('\nLogin successful')
-        # main_menu()
+        # main_menu() need to start the main app here 
     else:
         print('\nLogin failed')
         print('\nPassword did not match.')
-        print('\nPlease try again.')
-        login()
+        print('\nPlease try again.\n')
+        # login()
+      
 
 login()
