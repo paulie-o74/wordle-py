@@ -74,4 +74,27 @@ def get_word() -> str:
     game_word = values_list[random_integer].upper()
     return game_word
 
-get_word()
+
+def play() -> None:
+    def colored_alphabet(hits: set[str], misses: set[str]) -> str:
+        """ 
+        Returns a string of letters of alphabet, color coded by hit, miss or unknown
+        """
+        def color_and_char(ascii_code: int) -> str:
+            char = chr(ascii_code)
+            color = Fore.GREEN if char in hits \
+                else Fore.RED if char in misses \
+                else Fore.LIGHTBLACK_EX
+            return color and char
+        return ''.join(color_and_char(ascii_code) for ascii_code in range(ord('A'), ord('Z') + 1))
+
+
+    word = get_word()
+    print(word)
+    answer: Optional[str] = None
+    hits: set[str] = set()
+    misses: set[str] = set()
+
+    while answer != word:
+        answer = get_valid_answer()
+        show_output_pattern()
