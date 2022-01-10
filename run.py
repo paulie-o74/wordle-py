@@ -6,8 +6,8 @@ from google.oauth2.service_account import Credentials
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True) 
-
 import random
+from typing import Optional
 
 # Google api information
 SCOPE = [
@@ -88,10 +88,23 @@ def play() -> None:
             return color and char
         return ''.join(color_and_char(ascii_code) for ascii_code in range(ord('A'), ord('Z') + 1))
 
+    def get_valid_answer() -> str:
+        answer: str | None = None
+        while not answer:
+            prompt = colored_alphabet(hits, misses) + Fore.LIGHTWHITE_EX + ' --> ' + Fore.WHITE
+            response = input(prompt)
+            if len(response) != 5:
+                print(Fore.WHITE + f'Your answer must have 5 letters')
+            elif response not in values_list:
+                print(Fore.WHITE + 'Not in word list')
+            else:
+                answer = response
+        return answer
 
-    word = get_word()
+
+    word = get_word() ##maybe this needs to be outside after the get_word()
     print(word)
-    answer: Optional[str] = None
+    answer: Optional[str] = None ##Optional denotes that it is some type [str] or None (before the user has inputted their guess)
     hits: set[str] = set()
     misses: set[str] = set()
 
