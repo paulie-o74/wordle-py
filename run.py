@@ -7,6 +7,8 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True) 
 
+import random
+
 # Google api information
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -31,7 +33,7 @@ def get_logins() -> list:
     login_data = LOGINS.get_all_records()
     return login_data
 
-def login():
+def login() -> None:
     """
     Function to take user input (username and password) and compare
     to google sheet data record
@@ -58,6 +60,18 @@ def login():
         print('\nPassword did not match.')
         print('\nPlease try again.\n')
         # login()
-      
 
-login()
+# login()
+
+
+def get_word() -> str:
+    """ 
+    Pulls all data from the google worksheet, chooses a random integer to 
+    use in referencing the list of words produced
+    """
+    values_list = WORD_LIST.col_values(1)
+    random_integer = random.randint(1, 411)
+    game_word = values_list[random_integer].upper()
+    return game_word
+
+get_word()
