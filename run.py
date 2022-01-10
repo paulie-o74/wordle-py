@@ -101,13 +101,38 @@ def play() -> None:
                 answer = response
         return answer
 
+    def show_output_pattern() -> None:
+        """ 
+        Zip function accepts iterable items and merges them into a single tuple. 
+        The resultant value is a zip object that stores pairs of iterables. 
+        You can pass lists, tuples, sets, or dictionaries through the zip() function.
+        """
+        # 1st letter from word and first from answer
+        for word_letter, answer_letter in zip(word, answer):
+            # is answer_letter in word if false returns an integer 0 
+            # which is used for reference just before i.e. misses
+            [misses, hits][answer_letter in word].add(answer_letter)
+            # If true it returns boolean 1 and that aligns with hits because 
+            # of zero indexing. Then .add to the corresponding set.
+            display_color, display_char = \
+                (Fore.GREEN, word_letter) if word_letter == answer_letter \
+                else (Fore.YELLOW, answer_letter) if answer_letter in word \
+                else (Fore.WHITE, '*')
+            print(display_color + display_char, end='')
+        print()
 
-    word = get_word() ##maybe this needs to be outside after the get_word()
+    #maybe this needs to be outside after the get_word()
+    word = get_word() 
     print(word)
-    answer: Optional[str] = None ##Optional denotes that it is some type [str] or None (before the user has inputted their guess)
+    #Optional denotes that it is some type [str] or None (before the user has inputted their guess)
+    answer: Optional[str] = None
     hits: set[str] = set()
     misses: set[str] = set()
 
     while answer != word:
         answer = get_valid_answer()
         show_output_pattern()
+
+
+
+play()
