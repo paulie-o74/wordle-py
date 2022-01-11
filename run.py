@@ -1,12 +1,13 @@
 # Import the gspread library to use with google sheets api
 import gspread
 from google.oauth2.service_account import Credentials
-# Imports and starts the colorama function for people accessing on windows devices and autoreset means after every print statement
+# Imports and starts the colorama function for people accessing on windows
+# devices and autoreset means after every print statement
 # the default color of the text printed to the terminal goes back to white
 import colorama
-from colorama import Fore, Back, Style
-colorama.init(autoreset=True) 
-import random
+from colorama import Fore
+# colorama.init(autoreset=True) maybe I will want to put this on for after 
+# each round
 from typing import Optional
 
 # Google api information
@@ -27,6 +28,7 @@ WORD_LIST = SHEET.worksheet('words')
 DIVIDER = '-' * 30
 
 def get_logins() -> list:
+
     """
     Gets all the user log in details from the worksheet and return a list of dictionaries
     """
@@ -44,8 +46,10 @@ def login() -> None:
     logins = get_logins()
     # list comprehension making a list from an iteration
     # a more succint way to create a list from a for loop
-    # Every x is one dictionary in the list i.e. 1 username password pair key value pair
-    # We check if not to check if there is no result in the list matching a username then:
+    # Every x is one dictionary in the list i.e. 1 username password pair 
+    # key value pair
+    # We check if not to check if there is no result in the list matching 
+    # a username then:
     if not [x for x in logins if x['Username'] == username]: 
         print('\nNo such user found')
         print('\nPlease check and try again.')
@@ -78,23 +82,26 @@ def get_word() -> str:
 def play() -> None:
     def colored_alphabet(hits: set[str], misses: set[str]) -> str:
         """ 
-        Returns a string of letters of alphabet, color coded by hit, miss or unknown
+        Returns a string of letters of alphabet, color coded by hit, 
+        miss or unknown
         """
         def color_and_char(ascii_code: int) -> str:
             char = chr(ascii_code)
             color = Fore.GREEN if char in hits \
                 else Fore.RED if char in misses \
                 else Fore.LIGHTBLACK_EX
-            return color and char
-        return ''.join(color_and_char(ascii_code) for ascii_code in range(ord('A'), ord('Z') + 1))
+            return color + char
+        return ''.join(color_and_char(ascii_code) for ascii_code in 
+            range(ord('A'), ord('Z') + 1))
 
     def get_valid_answer() -> str:
         answer: str | None = None
         while not answer:
-            prompt = colored_alphabet(hits, misses) + Fore.LIGHTWHITE_EX + ' --> ' + Fore.WHITE
+            prompt = colored_alphabet(hits, misses) + Fore.LIGHTWHITE_EX + \
+            ' --> ' + Fore.WHITE
             response = input(prompt)
             if len(response) != 5:
-                print(Fore.WHITE + f'Your answer must have 5 letters')
+                print(Fore.WHITE + f"Your answer must have 5 letters")
             elif response not in values_list:
                 print(Fore.WHITE + 'Not in word list')
             else:
@@ -103,9 +110,11 @@ def play() -> None:
 
     def show_output_pattern() -> None:
         """ 
-        Zip function accepts iterable items and merges them into a single tuple. 
+        Zip function accepts iterable items and merges them 
+        into a single tuple. 
         The resultant value is a zip object that stores pairs of iterables. 
-        You can pass lists, tuples, sets, or dictionaries through the zip() function.
+        You can pass lists, tuples, sets, or dictionaries 
+        through the zip() function.
         """
         # 1st letter from word and first from answer
         for word_letter, answer_letter in zip(word, answer):
@@ -125,7 +134,7 @@ def play() -> None:
     word = get_word() 
     print(word)
     #Optional denotes that it is some type [str] or None (before the user has inputted their guess)
-    answer: Optional[str] = None
+    answer: str | None = None
     hits: set[str] = set()
     misses: set[str] = set()
 
