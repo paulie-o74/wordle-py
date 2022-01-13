@@ -9,6 +9,7 @@ from colorama import Fore
 # colorama.init(autoreset=True) maybe I will want to put this on for after 
 # each round
 from typing import Optional
+import random 
 
 # Google api information
 SCOPE = [
@@ -78,6 +79,7 @@ def get_word() -> str:
     game_word = values_list[random_integer].upper()
     return game_word
 
+get_word()
 
 def play() -> None:
     def colored_alphabet(hits: set[str], misses: set[str]) -> str:
@@ -131,8 +133,8 @@ def play() -> None:
         print()
 
     #maybe this needs to be outside after the get_word()
-    word = get_word() 
-    print(word)
+    # word = get_word() 
+    # print(word)
     #Optional denotes that it is some type [str] or None (before the user has inputted their guess)
     answer: str | None = None
     hits: set[str] = set()
@@ -144,4 +146,4 @@ def play() -> None:
 
 
 
-play()
+# play()
