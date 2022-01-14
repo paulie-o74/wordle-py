@@ -84,12 +84,12 @@ def take_user_input():
     
     return user_input
 
-def check_letters(word, input):
+def check_letters(game_word, input):
     correct_position = []
     cor_pos_index = []
     in_word = []
     in_word_index = []
-    for index, letter in enumerate(word):
+    for index, letter in enumerate(game_word):
         if letter in input:
             if letter == input[index]:
                 correct_position.append(letter)
@@ -99,4 +99,26 @@ def check_letters(word, input):
                 in_word_index.append(user_input.find(letter[:]))
     
     return correct_position, cor_pos_index, in_word, in_word_index
-            
+
+
+run = True
+i = 0
+while run:
+    user_input = take_user_input()
+    if user_input.upper() == game_word.upper():
+        print("You win!")
+        run = False
+    elif i = 6:
+        print("You have no more guesses, try again.")
+    else:
+        correct_position, cor_pos_index, in_word, in_word_index = check_letters(game_word, input)
+        if len(correct_position) > 0:
+            for index, letter in enumerate(correct_position):
+                character_index = cor_pos_index[index]
+                print("The letter {0} is in the word and in the correct spot, character {1} / 5".format(letter, characterindex + 1))
+        if len(in_word) > 0:
+            for index, letter in enumerate(in_word):
+                character_index = in_word_index[index]
+                print("The letter {0} is in the word but not in the correct spot, character {1} / 5".format(letter, characterindex + 1))
+        print("Please try again!")
+        i += 1 #used 1/6 of their attempts
