@@ -73,32 +73,49 @@ def get_word() -> str:
 
 get_word()
 
+
 def take_user_input():
-    user_input = input("Please enter a 5 letter word as your guess:\n")
+    """
+    Takes a user input of 5 letters only, that is in the list of words in the game
+    If user input isnt in the correct format, it prints an error message 
+    to the user and asks for another input.
+    """
+    user_input = input("Please enter a 5 letter word as your guess:\n") 
+    #takes user input as a string
     while (user_input.isalpha() != True or len(user_input) != 5):
+        # Checks if input is all letters and len = 5
         print("Incorrect format, please enter a 5 letter word as your guess")
         user_input = input("Please enter a 5 letter word as your guess:\n")
     while (user_input not in values_list):
+        #Checks if the word is in the input list as to not waste a turn if the word isn't in the list
         print("Word is not in word list")
         user_input = input("Please enter a 5 letter word as your guess:\n")
     
-    return user_input
+    return user_input #returns a string
 
-def check_letters(game_word, input):
-    correct_position = []
-    cor_pos_index = []
-    in_word = []
-    in_word_index = []
+def check_letters(game_word, input): #both are strings
+    """ 
+    Function to check which letters are in the correct position, 
+    which letters are in the word and not in the correct position
+    """
+    correct_position = [] #list which holds the letters in the correct position
+    cor_pos_index = [] #list which holds the index number of each correctly positioned letter
+    in_word = [] #list which holds the letters in the word but not in the correect position
+    in_word_index = [] #list which holds the index number of each incorrectly positioned letter
     for index, letter in enumerate(game_word):
-        if letter in input:
-            if letter == input[index]:
-                correct_position.append(letter)
-                cor_pos_index.append(index)
-            else:
-                in_word.append(letter)
-                in_word_index.append(user_input.find(letter[:]))
+        # enumerate records how many times weve iterated, index is our iteration number (starts at 0)
+        # letter is the current letter in the string game_word
+        if letter in input: #searches the input for the letter
+            if letter == input[index]: #if the same letter is in the same position
+                correct_position.append(letter) #save the correct letter in the correct_position list
+                cor_pos_index.append(index) #save the correct letter index in the cor_pos_index list
+            else: # if not in correct position, but letter is in the word
+                in_word.append(letter) #save the letter in the in_word list
+                in_word_index.append(user_input.find(letter[:])) #saves the index of the user input correct letter for future use
+                # find() takes the letter as a parameter, searches the string input 
+                # for the letter from left to right (0 index to last index), and returns the index where it is found
     
-    return correct_position, cor_pos_index, in_word, in_word_index
+    return correct_position, cor_pos_index, in_word, in_word_index # 4 lists
 
 
 run = True
