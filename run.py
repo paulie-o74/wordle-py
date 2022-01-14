@@ -56,9 +56,9 @@ def login() -> None:
         print('\nLogin failed')
         print('\nPassword did not match.')
         print('\nPlease try again.\n')
-        # login()
+        login()
 
-# login()
+
 
 
 def get_word() -> str:
@@ -71,7 +71,7 @@ def get_word() -> str:
     game_word = values_list[random_integer].upper()
     return game_word
 
-get_word()
+
 
 
 def take_user_input():
@@ -125,7 +125,8 @@ while run:
     if user_input.upper() == game_word.upper(): #converts to upper case to make the comparison easier
         print("You win!")
         run = False #loop ends
-    elif i = 6: #indicates to the user that they have no more turns left 
+    elif i == 6:
+        # indicates to the user that they have no more turns left 
         print("You have no more guesses, try again.")
     else:
         correct_position, cor_pos_index, in_word, in_word_index = check_letters(game_word, input)
@@ -141,3 +142,8 @@ while run:
                 print("The letter {0} is in the word but not in the correct spot, character {1} / 5".format(letter, characterindex + 1))
         print("Please try again!")
         i += 1 #used 1/6 of their attempts
+
+get_logins()
+login()
+get_word()
+take_user_input()
