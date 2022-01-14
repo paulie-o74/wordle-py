@@ -28,6 +28,8 @@ def get_logins() -> list:
     login_data = LOGINS.get_all_records()
     return login_data
 
+get_logins()
+
 def login() -> None:
     """
     Function to take user input (username and password) and compare
@@ -58,7 +60,7 @@ def login() -> None:
         print('\nPlease try again.\n')
         login()
 
-
+login()
 
 
 def get_word() -> str:
@@ -69,9 +71,9 @@ def get_word() -> str:
     values_list = WORD_LIST.col_values(1)
     random_integer = random.randint(1, 411)
     game_word = values_list[random_integer].upper()
-    return game_word
+    return game_word, values_list
 
-
+print(game_word)
 
 
 def take_user_input():
@@ -92,6 +94,7 @@ def take_user_input():
         user_input = input("Please enter a 5 letter word as your guess:\n")
     
     return user_input #returns a string
+    
 
 def check_letters(game_word, input): #both are strings
     """ 
@@ -142,8 +145,3 @@ while run:
                 print("The letter {0} is in the word but not in the correct spot, character {1} / 5".format(letter, characterindex + 1))
         print("Please try again!")
         i += 1 #used 1/6 of their attempts
-
-get_logins()
-login()
-get_word()
-take_user_input()
