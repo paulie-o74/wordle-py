@@ -117,25 +117,27 @@ def check_letters(game_word, input): #both are strings
     
     return correct_position, cor_pos_index, in_word, in_word_index # 4 lists
 
-
+#Take user input until they win or they reach 6 turns and the gam ends
 run = True
-i = 0
+i = 0 #counts how many turns the user has had
 while run:
-    user_input = take_user_input()
-    if user_input.upper() == game_word.upper():
+    user_input = take_user_input() # takes the user input 
+    if user_input.upper() == game_word.upper(): #converts to upper case to make the comparison easier
         print("You win!")
-        run = False
-    elif i = 6:
+        run = False #loop ends
+    elif i = 6: #indicates to the user that they have no more turns left 
         print("You have no more guesses, try again.")
     else:
         correct_position, cor_pos_index, in_word, in_word_index = check_letters(game_word, input)
-        if len(correct_position) > 0:
+        if len(correct_position) > 0: #if there are letters in the correct position
             for index, letter in enumerate(correct_position):
-                character_index = cor_pos_index[index]
+                character_index = cor_pos_index[index] # finds the index of the letter in user_input that was in the correct spot
                 print("The letter {0} is in the word and in the correct spot, character {1} / 5".format(letter, characterindex + 1))
-        if len(in_word) > 0:
+                # The 2 arguments .format takes are letter {0} and character_index + 1 to help the player understand where
+                # the correct letter is 
+        if len(in_word) > 0: #if they got a letter in the word but not in correct position
             for index, letter in enumerate(in_word):
-                character_index = in_word_index[index]
+                character_index = in_word_index[index] # finds the index of the letter in user_input that was in the correct spot
                 print("The letter {0} is in the word but not in the correct spot, character {1} / 5".format(letter, characterindex + 1))
         print("Please try again!")
         i += 1 #used 1/6 of their attempts
