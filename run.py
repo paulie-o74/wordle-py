@@ -84,4 +84,19 @@ def take_user_input():
     
     return user_input
 
-
+def check_letters(word, input):
+    correct_position = []
+    cor_pos_index = []
+    in_word = []
+    in_word_index = []
+    for index, letter in enumerate(word):
+        if letter in input:
+            if letter == input[index]:
+                correct_position.append(letter)
+                cor_pos_index.append(index)
+            else:
+                in_word.append(letter)
+                in_word_index.append(user_input.find(letter[:]))
+    
+    return correct_position, cor_pos_index, in_word, in_word_index
+            
