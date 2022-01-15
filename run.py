@@ -71,9 +71,11 @@ def get_word() -> str:
     values_list = WORD_LIST.col_values(1)
     random_integer = random.randint(1, 411)
     game_word = values_list[random_integer].upper()
+
     return game_word, values_list
 
-print(game_word)
+get_word()
+
 
 
 def take_user_input():
@@ -82,10 +84,11 @@ def take_user_input():
     If user input isnt in the correct format, it prints an error message 
     to the user and asks for another input.
     """
-    user_input = input("Please enter a 5 letter word as your guess:\n") 
+    user_input = input("Please enter a 5 letter word as your guess:\n").upper() 
     #takes user input as a string
     while (user_input.isalpha() != True or len(user_input) != 5):
         # Checks if input is all letters and len = 5
+        print(user_input)
         print("Incorrect format, please enter a 5 letter word as your guess")
         user_input = input("Please enter a 5 letter word as your guess:\n")
     while (user_input not in values_list):
@@ -94,7 +97,8 @@ def take_user_input():
         user_input = input("Please enter a 5 letter word as your guess:\n")
     
     return user_input #returns a string
-    
+
+take_user_input()
 
 def check_letters(game_word, input): #both are strings
     """ 
@@ -113,12 +117,17 @@ def check_letters(game_word, input): #both are strings
                 correct_position.append(letter) #save the correct letter in the correct_position list
                 cor_pos_index.append(index) #save the correct letter index in the cor_pos_index list
             else: # if not in correct position, but letter is in the word
-                in_word.append(letter) #save the letter in the in_word list
+                in_word.append(letter)  #save the letter in the in_word list
                 in_word_index.append(user_input.find(letter[:])) #saves the index of the user input correct letter for future use
                 # find() takes the letter as a parameter, searches the string input 
                 # for the letter from left to right (0 index to last index), and returns the index where it is found
     
     return correct_position, cor_pos_index, in_word, in_word_index # 4 lists
+
+
+check_letters(game_word, input)
+
+
 
 #Take user input until they win or they reach 6 turns and the gam ends
 run = True
@@ -145,3 +154,4 @@ while run:
                 print("The letter {0} is in the word but not in the correct spot, character {1} / 5".format(letter, characterindex + 1))
         print("Please try again!")
         i += 1 #used 1/6 of their attempts
+    
