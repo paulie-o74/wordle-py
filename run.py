@@ -210,5 +210,5 @@ while run:
                       "{1}".format(letter, character_index + 1))
         print("\nPlease try again!")
         i += 1  # used 1/6 of their attempts
-        print(f"You have {7 - i} attempts reamining")
+        print(f"You have {7 - i} attempts remaining")
         print(DIVIDER)
