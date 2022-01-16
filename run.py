@@ -5,6 +5,7 @@ import random
 import colorama
 from colorama import Fore, Back
 colorama.init(autoreset=True)
+# resets the terminal text color after each use of Fore and Back
 
 # Google api information
 SCOPE = [
@@ -60,6 +61,13 @@ def login() -> None:
         matched_username = [x for x in logins if x['Username'] == username][0]
     if password == matched_username['Password']:
         print('\nLogin successful\n')
+        print(DIVIDER)
+        print('\nHow to play:\n'
+              'Guess the WORDLE in 6 tries.\n'
+              'Each guess must be a valid 5 letter word.' 
+              ' Hit the enter button to submit.\n'
+              'After each guess, the color of the text will change'
+              ' to show how close your guess was to the word.\n')
         print(DIVIDER)
     else:
         print('\nLogin failed\n')
@@ -168,6 +176,7 @@ while run:
               "the word was:")
         print(game_word.upper())
         print(F"{Fore.RED}Better luck next time.")
+        print(DIVIDER)
         break
     else:
         correct_position, cor_pos_index, in_word, in_word_index \
@@ -198,7 +207,7 @@ while run:
                 print(f"\n{Fore.YELLOW}The "
                       "letter {0} is in the word "
                       "but not in position "
-                      "({1})".format(letter, character_index + 1))
+                      "{1}".format(letter, character_index + 1))
         print("\nPlease try again!")
         i += 1  # used 1/6 of their attempts
         print(f"You have {7 - i} attempts reamining")
