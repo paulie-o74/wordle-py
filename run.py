@@ -1,7 +1,7 @@
 # Import the gspread library to use with google sheets api
 import gspread
 from google.oauth2.service_account import Credentials
-import random 
+import random
 
 # Google api information
 SCOPE = [
@@ -20,15 +20,19 @@ WORD_LIST = SHEET.worksheet('words')
 # constants
 DIVIDER = '-' * 30
 
+
 def get_logins() -> list:
 
     """
-    Gets all the user log in details from the worksheet and return a list of dictionaries
+    Gets all the user log in details from the worksheet and
+    return a list of dictionaries
     """
     login_data = LOGINS.get_all_records()
     return login_data
 
+
 get_logins()
+
 
 def login() -> None:
     """
@@ -41,11 +45,11 @@ def login() -> None:
     logins = get_logins()
     # list comprehension making a list from an iteration
     # a more succint way to create a list from a for loop
-    # Every x is one dictionary in the list i.e. 1 username password pair 
+    # Every x is one dictionary in the list i.e. 1 username password pair
     # key value pair
-    # We check if not to check if there is no result in the list matching 
+    # We check if not to check if there is no result in the list matching
     # a username then:
-    if not [x for x in logins if x['Username'] == username]: 
+    if not [x for x in logins if x['Username'] == username]:
         print('\nNo such user found')
         print('\nPlease check and try again.')
         login()
@@ -53,52 +57,56 @@ def login() -> None:
         matched_username = [x for x in logins if x['Username'] == username][0]
     if password == matched_username['Password']:
         print('\nLogin successful')
-        # main_menu() need to start the main app here 
+        # main_menu() need to start the main app here
     else:
         print('\nLogin failed')
         print('\nPassword did not match.')
         print('\nPlease try again.\n')
         login()
 
+
 login()
 
 
 def get_word() -> str:
-    """ 
-    Pulls all data from the google worksheet, chooses a random integer to 
+    """
+    Pulls all data from the google worksheet, chooses a random integer to
     use in referencing the list of words produced
     """
-    values_list = WORD_LIST.col_values(1)
-    random_integer = random.randint(1, 411)
-    game_word = values_list[random_integer].upper()
-
+    values_list = []
+    for word in WORD_LIST.col_values(1):
+        values_list.append(word.upper())
+    random_integer = random.randint(0, 410)
+    game_word = values_list[random_integer]
+    print(values_list)
     return game_word, values_list
 
-get_word()
 
+game_word, values_list = get_word()
 
 
 def take_user_input():
     """
-    Takes a user input of 5 letters only, that is in the list of words in the game
+    Takes a user input of 5 letters only, that is in the list of words in 
+    the game.
     If user input isnt in the correct format, it prints an error message 
     to the user and asks for another input.
     """
-    user_input = input("Please enter a 5 letter word as your guess:\n").upper() 
-    #takes user input as a string
-    while (user_input.isalpha() != True or len(user_input) != 5):
-        # Checks if input is all letters and len = 5
-        print(user_input)
+    init_user_input = input("Please enter a 5 letter word as your guess:\n").upper()
+    # takes user input as a string
+    while (not init_user_input.isalpha() or len(init_user_input) != 5):
+    # Checks if input is all letters and len = 5
+        print(init_user_input)
         print("Incorrect format, please enter a 5 letter word as your guess")
-        user_input = input("Please enter a 5 letter word as your guess:\n")
-    while (user_input not in values_list):
-        #Checks if the word is in the input list as to not waste a turn if the word isn't in the list
+        init_user_input = input("Please enter a 5 letter word as your guess:\n")
+    while (init_user_input.upper() not in values_list):
+    #Checks if the word is in the input list as to not waste a turn if
+    #the word isn't in the list
         print("Word is not in word list")
-        user_input = input("Please enter a 5 letter word as your guess:\n")
-    
-    return user_input #returns a string
+        init_user_input = input("Please enter a 5 letter word as your guess:\n")
+    return init_user_input.upper() #returns a string
 
-take_user_input()
+
 
 def check_letters(game_word, input): #both are strings
     """ 
@@ -125,7 +133,6 @@ def check_letters(game_word, input): #both are strings
     return correct_position, cor_pos_index, in_word, in_word_index # 4 lists
 
 
-check_letters(game_word, input)
 
 
 
@@ -133,25 +140,24 @@ check_letters(game_word, input)
 run = True
 i = 0 #counts how many turns the user has had
 while run:
-    user_input = take_user_input() # takes the user input 
+    user_input = take_user_input() # takes the user input
     if user_input.upper() == game_word.upper(): #converts to upper case to make the comparison easier
         print("You win!")
         run = False #loop ends
     elif i == 6:
-        # indicates to the user that they have no more turns left 
+        # indicates to the user that they have no more turns left
         print("You have no more guesses, try again.")
     else:
-        correct_position, cor_pos_index, in_word, in_word_index = check_letters(game_word, input)
+        correct_position, cor_pos_index, in_word, in_word_index = check_letters(game_word, user_input)
         if len(correct_position) > 0: #if there are letters in the correct position
             for index, letter in enumerate(correct_position):
                 character_index = cor_pos_index[index] # finds the index of the letter in user_input that was in the correct spot
-                print("The letter {0} is in the word and in the correct spot, character {1} / 5".format(letter, characterindex + 1))
+                print("The letter {0} is in the word and in the correct spot, character {1} / 5".format(letter, character_index + 1))
                 # The 2 arguments .format takes are letter {0} and character_index + 1 to help the player understand where
                 # the correct letter is 
         if len(in_word) > 0: #if they got a letter in the word but not in correct position
             for index, letter in enumerate(in_word):
                 character_index = in_word_index[index] # finds the index of the letter in user_input that was in the correct spot
-                print("The letter {0} is in the word but not in the correct spot, character {1} / 5".format(letter, characterindex + 1))
+                print("The letter {0} is in the word but not in the correct spot, character {1} / 5".format(letter, character_index + 1))
         print("Please try again!")
         i += 1 #used 1/6 of their attempts
-    
