@@ -2,6 +2,9 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import random
+import colorama
+from colorama import Fore, Back
+colorama.init(autoreset=True)
 
 # Google api information
 SCOPE = [
@@ -62,7 +65,6 @@ def login() -> None:
         print('\nLogin failed\n')
         print('\nPassword did not match\n')
         print('\nPlease try again\n')
-        print(DIVIDER)
         login()
 
 
@@ -97,16 +99,15 @@ def take_user_input():
     # takes user input as a string
     while (not init_user_input.isalpha() or len(init_user_input) != 5):
         # Checks if input is all letters and len = 5
-        print(init_user_input)
-        print("\nIncorrect format, please enter a 5 letter word as "
-              "your guess\n")
+        print(F"\n{Fore.CYAN}Incorrect format, please enter a 5 letter word"
+              " as your guess\n")
         print(DIVIDER)
         init_user_input = input(
             "\nPlease enter a 5 letter word as your guess:\n")
     while init_user_input.upper() not in values_list:
         # Checks if the word is in the input list as to not waste a turn if
         # the word isn't in the list
-        print("\nWord is not in word list\n")
+        print(F"\n{Fore.CYAN}Word is not in word list\n")
         print(DIVIDER)
         init_user_input = input(
             "\nPlease enter a 5 letter word as your guess:\n")
@@ -152,29 +153,39 @@ def check_letters(game_word, input):  # both are strings
 
 # Take user input until they win or they reach 6 turns and the gam ends
 run = True
-i = 0  # counts how many turns the user has had
+i = 1  # counts how many turns the user has had
 while run:
     user_input = take_user_input()  # takes the user input
     if user_input.upper() == game_word.upper():
         # converts to upper case to make the comparison easier
         print(DIVIDER)
-        print("\nCongrats, you win!\n")
+        print(F"\n{Back.MAGENTA}Congrats, you win!")
+        print(DIVIDER)
         run = False  # loop ends
     elif i == 6:
         # indicates to the user that they have no more turns left
-        print("\nYou have no more guesses, try again.\n")
+        print(F"\n{Fore.RED}You have no more guesses remaining, "
+              "the word was:")
+        print(game_word.upper())
+        print(F"{Fore.RED}Better luck next time.")
+        break
     else:
         correct_position, cor_pos_index, in_word, in_word_index \
             = check_letters(game_word, user_input)
+        if len(correct_position) == 0 and len(in_word) == 0:
+            print(f"\n{Fore.BLUE}None "
+                  "of those letters "
+                  "appear in the word")
         if len(correct_position) > 0:
             # if there are letters in the correct position
             for index, letter in enumerate(correct_position):
                 character_index = cor_pos_index[index]
                 # finds the index of the letter in user_input
                 # that was in the correct spot
-                print("\nThe letter {0} is in the word "
-                      "and in the correct spot, "
-                      "character {1} / 5".format(letter, character_index + 1))
+                print(f"\n{Fore.GREEN}The "
+                      "letter {0} is in the word "
+                      "and is in the correct position "
+                      "({1})".format(letter, character_index + 1))
                 # The 2 arguments .format takes are letter {0} and
                 # character_index + 1 to help the player understand where
                 # the correct letter is
@@ -184,9 +195,11 @@ while run:
                 character_index = in_word_index[index]
                 # finds the index of the letter in
                 # user_input that was in the correct spot
-                print("\nThe letter {0} is in the word "
-                      "but not in the correct spot, "
-                      "character {1} / 5".format(letter, character_index + 1))
+                print(f"\n{Fore.YELLOW}The "
+                      "letter {0} is in the word "
+                      "but not in position "
+                      "({1})".format(letter, character_index + 1))
         print("\nPlease try again!")
-        print(DIVIDER)
         i += 1  # used 1/6 of their attempts
+        print(f"You have {7 - i} attempts reamining")
+        print(DIVIDER)
