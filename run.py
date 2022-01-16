@@ -50,18 +50,19 @@ def login() -> None:
     # We check if not to check if there is no result in the list matching
     # a username then:
     if not [x for x in logins if x['Username'] == username]:
-        print('\nNo such user found')
-        print('\nPlease check and try again.')
+        print('\nNo such user found\n')
+        print('\nPlease check and try again.\n')
         login()
     else:
         matched_username = [x for x in logins if x['Username'] == username][0]
     if password == matched_username['Password']:
-        print('\nLogin successful')
-        # main_menu() need to start the main app here
+        print('\nLogin successful\n')
+        print(DIVIDER)
     else:
-        print('\nLogin failed')
-        print('\nPassword did not match.')
-        print('\nPlease try again.\n')
+        print('\nLogin failed\n')
+        print('\nPassword did not match\n')
+        print('\nPlease try again\n')
+        print(DIVIDER)
         login()
 
 
@@ -78,7 +79,6 @@ def get_word() -> str:
         values_list.append(word.upper())
     random_integer = random.randint(0, 410)
     game_word = values_list[random_integer]
-    print(values_list)
     return game_word, values_list
 
 
@@ -92,21 +92,24 @@ def take_user_input():
     If user input isnt in the correct format, it prints an error message
     to the user and asks for another input.
     """
-    init_user_input = input("Please enter a 5 letter word as your guess:\n")\
-        .upper()
+    init_user_input = input(
+        "\nPlease enter a 5 letter word as your guess:\n").upper()
     # takes user input as a string
     while (not init_user_input.isalpha() or len(init_user_input) != 5):
         # Checks if input is all letters and len = 5
         print(init_user_input)
-        print("Incorrect format, please enter a 5 letter word as your guess")
-        init_user_input =
-        input("Please enter a 5 letter word as your guess:\n")
+        print("\nIncorrect format, please enter a 5 letter word as "
+              "your guess\n")
+        print(DIVIDER)
+        init_user_input = input(
+            "\nPlease enter a 5 letter word as your guess:\n")
     while init_user_input.upper() not in values_list:
         # Checks if the word is in the input list as to not waste a turn if
         # the word isn't in the list
-        print("Word is not in word list")
-        init_user_input =
-        input("Please enter a 5 letter word as your guess:\n")
+        print("\nWord is not in word list\n")
+        print(DIVIDER)
+        init_user_input = input(
+            "\nPlease enter a 5 letter word as your guess:\n")
     return init_user_input.upper()
     # returns a string
 
@@ -146,6 +149,7 @@ def check_letters(game_word, input):  # both are strings
                 # and returns the index where it is found
     return correct_position, cor_pos_index, in_word, in_word_index  # 4 lists
 
+
 # Take user input until they win or they reach 6 turns and the gam ends
 run = True
 i = 0  # counts how many turns the user has had
@@ -153,22 +157,24 @@ while run:
     user_input = take_user_input()  # takes the user input
     if user_input.upper() == game_word.upper():
         # converts to upper case to make the comparison easier
-        print("You win!")
+        print(DIVIDER)
+        print("\nCongrats, you win!\n")
         run = False  # loop ends
     elif i == 6:
         # indicates to the user that they have no more turns left
-        print("You have no more guesses, try again.")
+        print("\nYou have no more guesses, try again.\n")
     else:
-        correct_position, cor_pos_index, in_word, in_word_index =
-        check_letters(game_word, user_input)
+        correct_position, cor_pos_index, in_word, in_word_index \
+            = check_letters(game_word, user_input)
         if len(correct_position) > 0:
             # if there are letters in the correct position
             for index, letter in enumerate(correct_position):
                 character_index = cor_pos_index[index]
                 # finds the index of the letter in user_input
                 # that was in the correct spot
-                print("The letter {0} is in the word and in the correct spot, \
-                      character {1} / 5".format(letter, character_index + 1))
+                print("\nThe letter {0} is in the word "
+                      "and in the correct spot, "
+                      "character {1} / 5".format(letter, character_index + 1))
                 # The 2 arguments .format takes are letter {0} and
                 # character_index + 1 to help the player understand where
                 # the correct letter is
@@ -178,8 +184,9 @@ while run:
                 character_index = in_word_index[index]
                 # finds the index of the letter in
                 # user_input that was in the correct spot
-                print("The letter {0} is in the word but not in the \
-                      correct spot, character {1} / 5".format(letter,
-                      character_index + 1))
-        print("Please try again!")
+                print("\nThe letter {0} is in the word "
+                      "but not in the correct spot, "
+                      "character {1} / 5".format(letter, character_index + 1))
+        print("\nPlease try again!")
+        print(DIVIDER)
         i += 1  # used 1/6 of their attempts
