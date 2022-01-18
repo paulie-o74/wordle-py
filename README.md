@@ -1,7 +1,7 @@
 # A WORDLE clone
 (Developer: Paul Thomas O'Riordan)
 
-![Screenshot of terminal]()
+![Screenshot of terminal](/assets/welcome.png)
 
 [View live site](https://)
 
@@ -32,46 +32,44 @@
 
 ## Project Goals 
 
-- 
-- 
-- 
+- To successfully replicate the popular online game "WORDLE" in an app run only in the terminal, using similar logic and hints to replicate the experience of playing online. 
+- Official game can be found at https://www.powerlanguage.co.uk/wordle/
+- Rules are as following:
+- Guess the WORDLE in 6 tries.
+- Each guess must be a valid 5 letter word. Hit the enter button to submit.
+- After each guess, you will receive hints to show how close your guess was to the word.
 
 ### User Goals
-- 
-- 
-- 
+- To be able to play a game similar to the popular online game WORDLE.
+- To receive feedback relating to how close the game was.
+- To be able to log in to the system with pre-determined log in credentials.
 
 ### Site Owner Goals
-- 
-- 
-- 
+- Create an application that functions in a similar manner to that which can be found on WORDLE.
+- Create an application which users will be able to follow intuitively.
+- Create an application which is fit for purpose and does not have any bugs.
 
 ## User Experience
-
 ### Target Audience
-- 
+- Online gamers
+- People on their coffee break
 
 ### User Stories
 
 #### First-time User 
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
+1. As a first time user, I want to know what is expected of me on the log in screen
+2. As a first time user, I want to receive feedback on whether I logged in successfully or not.
+3. As a first time user, I want to be told the rules of the game.
+4. As a first time user, I want the menu and gameplay to be easy to follow and intuitive. 
 
 #### Site Owner
-9. 
-10. 
-11. 
-12. 
+6. As the site-owner, I want the user to be able to log in while receiving feedback and be told the rules before anything else is asked of the user.
+7. As the site-owner, I want the game to give accurate feedback to the user on whether or not their guess was correct
+8. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have letters in the correct position.
+9. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have any correct letters in the wrong position.
 
 ### Scope
-
-
+In this first version, the application is housed in the terminal, ideally this would work in tandem with other software in the future to either deploy it online or build a mobile app. 
 
 ### User Manual
 
@@ -79,56 +77,24 @@
 
 #### Overview
 
+- Users are greeted with a welcome screen calling for user to input username and password.
+- Users are then reminded of the rules.
+- Rules are as following:
+- Guess the WORDLE in 6 tries.
+- Each guess must be a valid 5 letter word. Hit the enter button to submit.
+- After each guess, you will receive hints to show how close your guess was to the word.
 
-
-#### Main Menu
-
-
-
-#### Vehicle Menu
-
-Purpose: 
-
-Operation: 
-
-1: 
-
-2:  
-
-- 
-
-- 
-
-- 
-
-- 
-
-- 
-- 
-
-
-#### Appraisal Menu
-
-1: 
-
-- 
-
-- 
-
-- 
-- 
-
-
-</details>
+- Log on credentials are listed below:
+![Screenshot of log on credentials](/assets/logon.png)
 
 ## Technical Design
 
 ### Flow Chart
 
-Below you can see the flowchart, created with [diagrammes.io](www.diagrammes.io)
+Below you can see the flowchart, created with [lucidchart.com](https://www.lucidchart.com/pages/)
 
 <details><summary>Flowchart</summary>
-<img src=""></details>
+<img src="/assets/"></details>
 
 ### Data models
 
