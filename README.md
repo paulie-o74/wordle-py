@@ -93,16 +93,16 @@ In this first version, the application is housed in the terminal, ideally this w
 
 Below you can see the flowchart, created with [lucidchart.com](https://www.lucidchart.com/pages/)
 
-<details><summary>Flowchart</summary>
-<img src="/assets/"></details>
+![Screenshot of log on flowchart](/assets/flowchart.png)
 
 ### Data models
 
-For this project I have used object oriented programming and centred the application to use and manipulate the folowing:
-- Classes - I have used 5 classes. One parent class of car, from which the subsequent classes inherit base values from and then 4 subclasses for each of the vehicle models; Slicker, Slider, ETronic and Trojan.   Each have some similar attibutes which are determined by the user and some unique attributes eg type (estate, pickup etc).
-- Lists and dictionaries - I have used lists for the appraisal data so that I can collate all stored data against a specific object and pass through class functions.  Dictionaries have been used for list comprehension when searching for matches in the sheets.
-- Google sheets API.  JUSTIFICATION: I have chosen to use Google Sheets API so that the required data for the app will persist outside of the container.
-
+For this project I have used the following features:
+- list comprehension making a list from an iteration, a more succint way to create a list from a for loop. 
+- Dictionaries e.g. in the username/password checking. 
+- Enumerate, which keeps track of how many times you have iterated.
+- Google sheets API.  JUSTIFICATION: I have chosen to use Google Sheets API so that the required data for the app will persist outside of the app, the application will then be able to check log on credentials and the list of words which can be added to in the future.
+- Random JUSTIFICATION: I wanted to be able to choose a number at random as an index to pull a different word from the word list each time the game is played. 
 
 ## Technologies Used
 
@@ -112,29 +112,25 @@ For this project I have used object oriented programming and centred the applica
 
 ### Frameworks and Tools
 
-1. 
+1. [Heroku](https://heroku.com/) - Heroku was used to deploy the project and to provide a virtual terminal to for examiners. 
 2. [GitHub](https://github.com/) - GitHub was used as a remote repository to store project code. 
-3. 
-4. [Diagrams.net](https://app.diagrams.net/) - was used to draw flowchart.
-5. [Google Sheets](https://www.google.co.uk/sheets/about/) - was used to store data outside of the program.  The vehicle catalogue and appraisal data stored in 2 separate sheets.
+3. [Gitpod](https://gitpod.com/) - Gitpod was used as the main IDE for this project.
+4. [lucidchart.com](https://www.lucidchart.com/pages/) - was used to draw flowchart.
+5. [Google Sheets](https://www.google.co.uk/sheets/about/) - was used to store data outside of the program.  The word list and log on credentials are stored in 2 separate sheets.
 6. [Google Cloud Platform](https://cloud.google.com/cloud-console/) - was used to manage access and permissions to the google services, google auth, sheets etc.
 
 #### Libraries
 
-1. 
-
 ### 3rd Party Libraries
-1. [gspread](https://docs.gspread.org/en/latest/) - JUSTIFICATION:  As efforts to find a native python library to access, add, manipulate and remove data from googlesheets and to interact with the google API do not seem to exist I have chosen to use the gspread library for these functions.
+1. [gspread](https://docs.gspread.org/en/latest/) - JUSTIFICATION:  For the purposes of the project spec, I wanted to access and manipulate from googlesheets and to interact with the google API so I have chosen to use the gspread library for these functions.
+
+2. [colorama](https://pypi.org/project/colorama/) - IMPORTANT: THIS WAS ONLY USED IN TESTING AS IT WOULD NOT WORK IN HEROKU (SEE TESTING.PY) JUSTIFICATION:  For the purposes of the project spec, I wanted to be able to give the user visual feedbaclk similar to the official game which gives color clues to help the users identify which letters they have in the correct position and which letters they have in the word but not in the correct position. 
 
 ## Features
 
 ### Main Menu
 
 
-
-<details><summary>Main Menu</summary>
-<img src="">
-</details>
 
 **This screen covers the following user stories:**
 
@@ -195,16 +191,11 @@ For this project I have used object oriented programming and centred the applica
 The Python code of the each module was validated using [PEP8 Validation Service](http://pep8online.com/).  All modules returned a pass with 0 errors and 0 warnings.
 
 <details><summary>run.py</summary>
-<img src="docs/validation/python-validation/validation-runpy.png">
-</details>
 
-<details><summary>sheet1.py</summary>
-<img src="docs/validation/python-validation/validation-sheet1.png">
-</details>
 
-<details><summary>vehicles.py</summary>
-<img src="docs/validation/python-validation/validation-vehicles.png">
-</details>
+<details><summary>testing.py</summary>
+
+
 
 ### Testing user stories
 
@@ -386,13 +377,13 @@ This application has been deployed from Github using Heroku. Here's how:
 
 By forking this GitHub repository you are making a copy of the original to view or make changes without affecting the original. You can do this by following these steps...
 
-1. Log into your GitHub account and find the [repository](https://github.com/dannymagnus/CI_MS3_MitsurukiFMS).
+1. Log into your GitHub account and find the [repository](https://github.com/rashdogg74/wordle-py).
 2. Click 'Fork' (last button on the top right of the repository page).
 3. You will then have a copy of the repository in your own GitHub account. 
 
 ### Making a Local Clone
 
-1. Log into your GitHub account and find the [repository](https://github.com/dannymagnus/CI_MS3_MitsurukiFMS).
+1. Log into your GitHub account and find the [repository](https://github.com/rashdogg74/wordle-py).
 2. Click on the 'Code' button (next to 'Add file'). 
 3. To clone the repository using HTTPS, under clone with HTTPS, copy the link.
 4. Then open Git Bash.
@@ -407,9 +398,12 @@ By forking this GitHub repository you are making a copy of the original to view 
 
 - **Code Institute** - for git template IDE and heroku deployment instructions.
 - **Google** - for library [gspread](https://docs.gspread.org/en/latest/) and [APIS](https://developers.google.com/sheets/api)
-- With the exception of the above, all code was written raw and occasional reference to W3C schools for classes. No code has been borrowed from other sources.
+- **Colorama** - for testing.py [colorama](https://pypi.org/project/colorama/)
+- With the exception of the above, all code was written raw and occasional references to W3C schools, stackoverflow, . No code has been borrowed from other sources.
 
 ### Acknowledgements: 
 
-- To my mentor Mo Shami for his invaluable guidance and direction.
+- To my mentor Mo Shami for his guidance and direction.
 - To the Code Institute online resources
+- To my younger brother (seanie5011) for engaging in conversation and sharing his own experience with logic based applications
+- To my partner Ashley for helping me through personal issues and helping me stay on task.
