@@ -2,10 +2,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import random
-import colorama
-from colorama import Fore, Back
-colorama.init(autoreset=True)
-# resets the terminal text color after each use of Fore and Back
+
 
 # Google api information
 SCOPE = [
@@ -107,7 +104,7 @@ def take_user_input():
     # takes user input as a string
     while (not init_user_input.isalpha() or len(init_user_input) != 5):
         # Checks if input is all letters and len = 5
-        print(F"\n{Fore.CYAN}Incorrect format, please enter a 5 letter word"
+        print(F"\nIncorrect format, please enter a 5 letter word"
               " as your guess\n")
         print(DIVIDER)
         init_user_input = input(
@@ -115,7 +112,7 @@ def take_user_input():
     while init_user_input.upper() not in values_list:
         # Checks if the word is in the input list as to not waste a turn if
         # the word isn't in the list
-        print(F"\n{Fore.CYAN}Word is not in word list\n")
+        print(F"\nWord is not in word list\n")
         print(DIVIDER)
         init_user_input = input(
             "\nPlease enter a 5 letter word as your guess:\n")
@@ -167,22 +164,22 @@ while run:
     if user_input.upper() == game_word.upper():
         # converts to upper case to make the comparison easier
         print(DIVIDER)
-        print(F"\n{Back.MAGENTA}Congrats, you win!")
+        print(F"\nCongrats, you win!")
         print(DIVIDER)
         run = False  # loop ends
     elif i == 6:
         # indicates to the user that they have no more turns left
-        print(F"\n{Fore.RED}You have no more guesses remaining, "
+        print(F"\nYou have no more guesses remaining, "
               "the word was:")
         print(game_word.upper())
-        print(F"{Fore.RED}Better luck next time.")
+        print(F"Better luck next time.")
         print(DIVIDER)
         break
     else:
         correct_position, cor_pos_index, in_word, in_word_index \
             = check_letters(game_word, user_input)
         if len(correct_position) == 0 and len(in_word) == 0:
-            print(f"\n{Fore.BLUE}None "
+            print(f"\nNone "
                   "of those letters "
                   "appear in the word")
         if len(correct_position) > 0:
@@ -191,7 +188,7 @@ while run:
                 character_index = cor_pos_index[index]
                 # finds the index of the letter in user_input
                 # that was in the correct spot
-                print(f"\n{Fore.GREEN}The "
+                print(f"\nThe "
                       "letter {0} is in the word "
                       "and is in the correct position "
                       "({1})".format(letter, character_index + 1))
@@ -204,7 +201,7 @@ while run:
                 character_index = in_word_index[index]
                 # finds the index of the letter in
                 # user_input that was in the correct spot
-                print(f"\n{Fore.YELLOW}The "
+                print(f"\nThe "
                       "letter {0} is in the word "
                       "but not in position "
                       "{1}".format(letter, character_index + 1))
