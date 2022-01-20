@@ -3,7 +3,7 @@
 
 ![Screenshot of terminal](/assets/welcome.png)
 
-[View live site](https://)
+[View live site](https://wordle-py.herokuapp.com/)
 
 ## Table of Contents
 
@@ -28,7 +28,7 @@
 8. [Bugs](#Bugs)
 10. [Deployment](#deployment)
 11. [Credits](#credits)
-12. [Acknowledgements](#acknowledgements)
+12. [Acknowledgments](#acknowledgments)
 
 ## Project Goals 
 
@@ -42,7 +42,7 @@
 ### User Goals
 - To be able to play a game similar to the popular online game WORDLE.
 - To receive feedback relating to how close the game was.
-- To be able to log in to the system with pre-determined log in credentials.
+- To be able to log in to the system with predetermined log in credentials.
 
 ### Site Owner Goals
 - Create an application that functions in a similar manner to that which can be found on WORDLE.
@@ -63,10 +63,10 @@
 4. As a first time user, I want the menu and gameplay to be easy to follow and intuitive. 
 
 #### Site Owner
-6. As the site-owner, I want the user to be able to log in while receiving feedback and be told the rules before anything else is asked of the user.
-7. As the site-owner, I want the game to give accurate feedback to the user on whether or not their guess was correct
-8. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have letters in the correct position.
-9. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have any correct letters in the wrong position.
+5. As the site-owner, I want the user to be able to log in while receiving feedback and be told the rules before anything else is asked of the user.
+6. As the site-owner, I want the game to give accurate feedback to the user on whether or not their guess was correct
+7. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have letters in the correct position.
+8. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have any correct letters in the wrong position.
 
 ### Scope
 In this first version, the application is housed in the terminal, ideally this would work in tandem with other software in the future to either deploy it online or build a mobile app. 
@@ -98,7 +98,7 @@ Below you can see the flowchart, created with [lucidchart.com](https://www.lucid
 ### Data models
 
 For this project I have used the following features:
-- list comprehension making a list from an iteration, a more succint way to create a list from a for loop. 
+- list comprehension making a list from an iteration, a more succinct way to create a list from a for loop. 
 - Dictionaries e.g. in the username/password checking. 
 - Enumerate, which keeps track of how many times you have iterated.
 - Google sheets API.  JUSTIFICATION: I have chosen to use Google Sheets API so that the required data for the app will persist outside of the app, the application will then be able to check log on credentials and the list of words which can be added to in the future.
@@ -124,7 +124,7 @@ For this project I have used the following features:
 ### 3rd Party Libraries
 1. [gspread](https://docs.gspread.org/en/latest/) - JUSTIFICATION:  For the purposes of the project spec, I wanted to access and manipulate from googlesheets and to interact with the google API so I have chosen to use the gspread library for these functions.
 
-2. [colorama](https://pypi.org/project/colorama/) - IMPORTANT: THIS WAS ONLY USED IN TESTING AS IT WOULD NOT WORK IN HEROKU (SEE TESTING.PY) JUSTIFICATION:  For the purposes of the project spec, I wanted to be able to give the user visual feedbaclk similar to the official game which gives color clues to help the users identify which letters they have in the correct position and which letters they have in the word but not in the correct position. 
+2. [colorama](https://pypi.org/project/colorama/) - IMPORTANT: THIS WAS ONLY USED IN TESTING AS IT WOULD NOT WORK IN HEROKU (SEE TESTING.PY) JUSTIFICATION:  For the purposes of the project spec, I wanted to be able to give the user visual feedback similar to the official game which gives color clues to help the users identify which letters they have in the correct position and which letters they have in the word but not in the correct position. 
 
 ## Features
 
@@ -163,85 +163,24 @@ For this project I have used the following features:
 ## Validation
 
 ### Python Validation
-The Python code of the each module was validated using [PEP8 Validation Service](http://pep8online.com/).  All modules returned a pass with 0 errors and 0 warnings.
+The Python code of each module was validated using [PEP8 Validation Service](http://pep8online.com/).  All modules returned a pass with 0 errors and 0 warnings.
 
-![Screenshot of winning message](/assets/pep8.png)
+![Screenshot of pep8](/assets/pep8.png)
 
 ### Testing user stories
 
-1. 
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Find main menu       |      Select option 1       | User is presented with Vehicle sub-menu | Works as expected |
-
-
-
-2. 
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Find Vehicle Menu  |   Select option 1   | Displays input reg | Works as expected |
-
-
-
-3. 
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Find Appraisals Menu      |      Select option 1      | Prompt appears to enter vehicle registration | Works as expected |
-
-
-
-4. .
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-|  Find Add Vehicle Menu Option     |      Enter vehicle details  |   Confirmation displayed with prompt to add to database | Works as expected |
-| Update database prompt | Select to update OR cancel | Database updated with confirmation OR return to menu | Works as expected  |
-
-
-5. 
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-|  Find Remove Vehicle Menu Option     |      Enter vehicle registration  |   Confirmation displayed with prompt to remove from database | Works as expected |
-
-
-
-6. 
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Search Appraisal Option    |      Enter vehicle registration and confirm prompt if vehicle is located   |  User is presented with all appraisal data for the vehicle selected  | Works as expected |
-
-
-7. 
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Vehicle Reg length Validation     |      Enter incorrect reg length     |  Error message displayed with reason and resubmit | Works as expected |
-
-
-8. 
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-|    Find menu options   |      Select menu options   |  User recieves acknowledgement from system  |  Works as expected  | 
-
-
-9. 
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Find Vehicle Menu  |   Select option 1   | Displays input reg | Works as expected |
-
+All user stories were extensively tested and the clear and simple interface, constant feedback as well as gaining insight from different people testing it without any prior knowledge of the game, all helped in the deployment of this project. 
+In conclusion all user stories tested and working as expected in both the terminal and the Heroku terminal. 
 
 ## Bugs
 
 | **Bug** | **Fix** |
 | ----------- | ----------- |
-| 'Vehicle catalogue' not updating with additions or removals until programme termination and re-run |   Changed variable from being called at start of module to being a function   |
+| Calling google API for each word used in the game caused problems |   Changed function to call only once when logging on, making a list of every word in the sheet and then generating random integers to reference the word for the game   |
+| Not able to access variables outside of their scope |   Returned the variables and then assigned them as global variables after the function  |
+| Difficulties in referencing which position the correct letter was in |   Used enumerate() which records how many times we have iterated through and we can then return the index to point the user to which letter he/she got right and in which position   |
+| Printing colored text to the terminal not working after deployment |   Removed colorama library and changed code (while leaving the rest in testing.py)   |
+| App not returning correct value for remaining tries |   Changed function to accurately return the remaining guesses taking 0 indexing into account   |
 
 
 ## Deployment
@@ -287,9 +226,9 @@ By forking this GitHub repository you are making a copy of the original to view 
 - **Code Institute** - for git template IDE and heroku deployment instructions.
 - **Google** - for library [gspread](https://docs.gspread.org/en/latest/) and [APIS](https://developers.google.com/sheets/api)
 - **Colorama** - for testing.py [colorama](https://pypi.org/project/colorama/)
-- With the exception of the above, all code was written raw and occasional references to W3C schools, stackoverflow, . No code has been borrowed from other sources.
+- With the exception of the above, all code was written raw and occasional references to W3C schools, stackoverflow, youtube, slack. No code has been borrowed from other sources.
 
-### Acknowledgements: 
+### Acknowledgments: 
 
 - To my mentor Mo Shami for his guidance and direction.
 - To the Code Institute online resources
