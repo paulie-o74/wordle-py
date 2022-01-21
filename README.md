@@ -210,7 +210,7 @@ All user stories were extensively tested and the clear and simple interface, con
 |-------------|------------|---------------------|-------------------|
 | Feedback from guesses       |      User is presented with information related to their guess       | feedback given relating to if they have the correct answer | Works as expected |
 
-![Screenshot of right or wrong](/assets/incorrect_position.png)
+![Screenshot of right or wrong](/assets/no_tries_left.png)
 
 7. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have letters in the correct position.
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
@@ -224,7 +224,7 @@ All user stories were extensively tested and the clear and simple interface, con
 |-------------|------------|---------------------|-------------------|
 | Feedback from guesses       |      User is presented with information related to their guess i.e. letters       | feedback given relating to the placements of letters | Works as expected |
 
-![Screenshot of where letters are in the wrong position but in the word](/assets/.png)
+![Screenshot of where letters are in the wrong position but in the word](/assets/incorrect_position.png)
 
 
 
