@@ -175,14 +175,14 @@ All user stories were extensively tested and the clear and simple interface, con
 |-------------|------------|---------------------|-------------------|
 | Find log in screen       |      Enter username & password       | app prompts user to input username and password | Works as expected |
 
-![Screenshot of username & password](/assets/.png)
+![Screenshot of username & password](/assets/prompt.png)
 
 2. As a first time user, I want to receive feedback on whether I logged in successfully or not.
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Welcome message       |      Hit enter with correct credentials       | app gives feedback to the user on screen | Works as expected |
 
-![Screenshot of log in successful](/assets/.png)
+![Screenshot of log in successful](/assets/log_in_success.png)
 
 3. As a first time user, I want to be told the rules of the game.
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
