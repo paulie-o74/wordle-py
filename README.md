@@ -198,12 +198,35 @@ All user stories were extensively tested and the clear and simple interface, con
 
 ![Screenshot of first guess](/assets/.png)
 
-4. As a first time user, I want the menu and gameplay to be easy to follow and intuitive. 
+5. As the site-owner, I want the user to be able to log in while receiving feedback and be told the rules before anything else is asked of the user.
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Enter first guess & feedback       |      User inputs first guess       | app gives feedback to the user on screen | Works as expected |
+| Log in screen       |      User is greeted by welcome screen       | app prompts user to input credentials | Works as expected |
 
-![Screenshot of first guess](/assets/.png)
+![Screenshot of username & password](/assets/.png)
+
+6. As the site-owner, I want the game to give accurate feedback to the user on whether or not their guess was correct
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Feedback from guesses       |      User is presented with information related to their guess       | feedback given relating to if they have the correct answer | Works as expected |
+
+![Screenshot of right or wrong](/assets/.png)
+
+7. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have letters in the correct position.
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Feedback from guesses       |      User is presented with information related to their guess i.e. letters       | feedback given relating to the placements of letters | Works as expected |
+
+![Screenshot of where letters are correct](/assets/.png)
+
+8. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have any correct letters in the wrong position.
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Feedback from guesses       |      User is presented with information related to their guess i.e. letters       | feedback given relating to the placements of letters | Works as expected |
+
+![Screenshot of where letters are in the wrong position but in the word](/assets/.png)
+
+
 
 ## Bugs
 
