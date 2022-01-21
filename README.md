@@ -302,7 +302,6 @@ By forking this GitHub repository you are making a copy of the original to view 
 
 - **Code Institute** - for git template IDE and heroku deployment instructions.
 - **Google** - for library [gspread](https://docs.gspread.org/en/latest/) and [APIS](https://developers.google.com/sheets/api)
-- **Colorama** - for testing.py [colorama](https://pypi.org/project/colorama/)
 - With the exception of the above, all code was written raw and occasional references to W3C schools, stackoverflow, youtube, slack. No code has been borrowed from other sources.
 
 ### Acknowledgments: 
