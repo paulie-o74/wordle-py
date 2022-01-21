@@ -155,7 +155,11 @@ The user is presented witht he main rules upon logging in. This is to also serve
 
 **This screen covers the following user stories:**
 
-*4 *7 *8 *9 (see above)
+4. As a first time user, I want the menu and gameplay to be easy to follow and intuitive. 
+7. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have letters in the correct position.
+8. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have any correct letters in the wrong position.
+
+Users will need constant feedback relating to their guesses. WHich letters they have guessed correctly in the correct position and which letters are in the word but not in the correct position. It is then down to the user to use their own logic to figure out what the word might be and what letters they still have remaining. 
 
 #### Winning screen
 
@@ -163,7 +167,9 @@ The user is presented witht he main rules upon logging in. This is to also serve
 
 **This screen covers the following user stories:**
 
-*7 (see above)
+6. As the site-owner, I want the game to give accurate feedback to the user on whether or not their guess was correct
+
+If the user enteres the correct guess then they are shown a success message imediately. 
 
 ## Validation
 
