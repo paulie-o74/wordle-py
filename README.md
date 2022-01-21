@@ -167,9 +167,9 @@ Users will need constant feedback relating to their guesses. Which letters they 
 
 **This screen covers the following user stories:**
 
-6. As the site-owner, I want the game to give accurate feedback to the user on whether or not their guess was correct
+6. As the site-owner, I want the game to give accurate feedback to the user on whether or not their guess was correct.
 
-If the user enteres the correct guess then they are shown a success message imediately. 
+If the user enters the correct guess then they are shown a success message immediately. 
 
 ## Validation
 
