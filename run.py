@@ -63,7 +63,7 @@ def login() -> None:
               'Guess the WORDLE in 6 tries.\n'
               'Each guess must be a valid 5 letter word.'
               ' Hit the enter button to submit.\n'
-              'After each guess, the color of the text will change'
+              'After each guess, you will receive feedback'
               ' to show how close your guess was to the word.\n')
         print(DIVIDER)
     else:
