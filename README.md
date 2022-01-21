@@ -132,7 +132,11 @@ For this project I have used the following features:
 
 **This screen covers the following user stories:**
 
-*1 *2 *6 (see above)
+1. As a first time user, I want to know what is expected of me on the log in screen
+2. As a first time user, I want to receive feedback on whether I logged in successfully or not.
+6. As the site-owner, I want the game to give accurate feedback to the user on whether or not their guess was correct
+
+The welcome screen calls for authentication from the user to allow them into the main app- see below for log on credentials. 
 
 ### Rules
 
@@ -140,7 +144,10 @@ For this project I have used the following features:
 
 **This screen covers the following user stories:**
 
-*3 *6 (see above)
+3. As a first time user, I want to be told the rules of the game.
+6. As the site-owner, I want the game to give accurate feedback to the user on whether or not their guess was correct
+
+The user is presented witht he main rules upon logging in. This is to also serve as a reminder for returning players. 
 
 #### Feedback relating to letters
 
