@@ -168,7 +168,42 @@ The Python code of each module was validated using [PEP8 Validation Service](htt
 ### Testing user stories
 
 All user stories were extensively tested and the clear and simple interface, constant feedback as well as gaining insight from different people testing it without any prior knowledge of the game, all helped in the deployment of this project. 
-In conclusion all user stories tested and working as expected in both the terminal and the Heroku terminal. 
+
+
+1. As a first time user, I want to know what is expected of me on the log in screen
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Find log in screen       |      Enter username & password       | app prompts user to input username and password | Works as expected |
+
+![Screenshot of username & password](/assets/.png)
+
+2. As a first time user, I want to receive feedback on whether I logged in successfully or not.
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Welcome message       |      Hit enter with correct credentials       | app gives feedback to the user on screen | Works as expected |
+
+![Screenshot of log in successful](/assets/.png)
+
+3. As a first time user, I want to be told the rules of the game.
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Rules description       |      Successful log in       | app gives rules to the user on screen | Works as expected |
+
+![Screenshot of rules](/assets/.png)
+
+4. As a first time user, I want the menu and gameplay to be easy to follow and intuitive. 
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Enter first guess & feedback       |      User inputs first guess       | app gives feedback to the user on screen | Works as expected |
+
+![Screenshot of first guess](/assets/.png)
+
+4. As a first time user, I want the menu and gameplay to be easy to follow and intuitive. 
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Enter first guess & feedback       |      User inputs first guess       | app gives feedback to the user on screen | Works as expected |
+
+![Screenshot of first guess](/assets/.png)
 
 ## Bugs
 
