@@ -73,8 +73,6 @@ In this first version, the application is housed in the terminal, ideally this w
 
 ### User Manual
 
-<details><summary>Click Here for instructions for use</summary>
-
 #### Overview
 
 - Users are greeted with a welcome screen calling for user to input username and password.
