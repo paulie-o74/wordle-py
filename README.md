@@ -230,5 +230,5 @@ By forking this GitHub repository you are making a copy of the original to view 
 
 - To my mentor Mo Shami for his guidance and direction.
 - To the Code Institute online resources
-- To my younger brother (seanie5011) for engaging in conversation and sharing his own experience with logic based applications
+- To my younger brother Sean for engaging in conversation and sharing his own experience with logic based applications
 - To my partner Ashley for helping me through personal issues and helping me stay on task.
