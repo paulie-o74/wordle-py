@@ -189,35 +189,35 @@ All user stories were extensively tested and the clear and simple interface, con
 |-------------|------------|---------------------|-------------------|
 | Rules description       |      Successful log in       | app gives rules to the user on screen | Works as expected |
 
-![Screenshot of rules](/assets/.png)
+![Screenshot of rules](/assets/rulesd.png)
 
 4. As a first time user, I want the menu and gameplay to be easy to follow and intuitive. 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Enter first guess & feedback       |      User inputs first guess       | app gives feedback to the user on screen | Works as expected |
 
-![Screenshot of first guess](/assets/.png)
+![Screenshot of first guess](/assets/enter_guess.png)
 
 5. As the site-owner, I want the user to be able to log in while receiving feedback and be told the rules before anything else is asked of the user.
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Log in screen       |      User is greeted by welcome screen       | app prompts user to input credentials | Works as expected |
 
-![Screenshot of username & password](/assets/.png)
+![Screenshot of username & password](/assets/rulesd.png)
 
 6. As the site-owner, I want the game to give accurate feedback to the user on whether or not their guess was correct
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Feedback from guesses       |      User is presented with information related to their guess       | feedback given relating to if they have the correct answer | Works as expected |
 
-![Screenshot of right or wrong](/assets/.png)
+![Screenshot of right or wrong](/assets/incorrect_position.png)
 
 7. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have letters in the correct position.
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Feedback from guesses       |      User is presented with information related to their guess i.e. letters       | feedback given relating to the placements of letters | Works as expected |
 
-![Screenshot of where letters are correct](/assets/.png)
+![Screenshot of where letters are correct](/assets/correct_position.png)
 
 8. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have any correct letters in the wrong position.
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
