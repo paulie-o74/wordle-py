@@ -134,7 +134,7 @@ For this project I have used the following features:
 
 1. As a first time user, I want to know what is expected of me on the log in screen
 2. As a first time user, I want to receive feedback on whether I logged in successfully or not.
-6. As the site-owner, I want the game to give accurate feedback to the user on whether or not their guess was correct
+6. As the site-owner, I want the game to give accurate feedback to the user on whether or not their guess was correct.
 
 The welcome screen calls for authentication from the user to allow them into the main app- see below for log on credentials. 
 
@@ -147,7 +147,7 @@ The welcome screen calls for authentication from the user to allow them into the
 3. As a first time user, I want to be told the rules of the game.
 6. As the site-owner, I want the game to give accurate feedback to the user on whether or not their guess was correct
 
-The user is presented witht he main rules upon logging in. This is to also serve as a reminder for returning players. 
+The user is presented with the main rules upon logging in. This is to also serve as a reminder for returning players. 
 
 #### Feedback relating to letters
 
@@ -159,7 +159,7 @@ The user is presented witht he main rules upon logging in. This is to also serve
 7. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have letters in the correct position.
 8. As the site-owner, I want the game to give accurate feedback to the user on whether or not they have any correct letters in the wrong position.
 
-Users will need constant feedback relating to their guesses. WHich letters they have guessed correctly in the correct position and which letters are in the word but not in the correct position. It is then down to the user to use their own logic to figure out what the word might be and what letters they still have remaining. 
+Users will need constant feedback relating to their guesses. Which letters they have guessed correctly in the correct position and which letters are in the word but not in the correct position. It is then down to the user to use their own logic to figure out what the word might be and what letters they still have remaining. 
 
 #### Winning screen
 
@@ -180,7 +180,7 @@ The Python code of each module was validated using [PEP8 Validation Service](htt
 
 ### Testing user stories
 
-All user stories were extensively tested and the clear and simple interface, constant feedback as well as gaining insight from different people testing it without any prior knowledge of the game, all helped in the deployment of this project. 
+All user stories were extensively tested and the clear and simple interface, constant feedback as well as gaining insight from different people, including my mentor, testing it without any prior knowledge of the game, all helped in the deployment of this project. 
 
 
 1. As a first time user, I want to know what is expected of me on the log in screen
